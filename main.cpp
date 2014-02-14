@@ -1,6 +1,8 @@
 #include <glog/logging.h>
 #include <gflags/gflags.h>
 
+#include "DoSomething.hpp"
+
 int main(int argc, char* argv[]) {
   // Parse flags
   google::SetVersionString("0.0.1");
@@ -35,6 +37,13 @@ int main(int argc, char* argv[]) {
   }
 
   // CHECK macros (coming soon)
+
   // VERBOSE logging (coming soon)
+  GlobalSomething();
+  GlobalWarning();
+
+  DoSomething something;
+  something.warning();
+
   LOG(FATAL) << "FATAL: Ruh-roh."; // Note: This exits.
 }
